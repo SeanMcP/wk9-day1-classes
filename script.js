@@ -17,7 +17,6 @@
 // Create the Factory class bellow:
 
 class Factory {
-  // constructor(make, location, airbags, abs, warranty) {
   constructor() {
     this.make = 'Mazda'
     this.location = 'USA'
@@ -32,6 +31,7 @@ class Factory {
     }
   }
 }
+
 
 // CREATE A SUB-CLASS CALLED CAR
 // It should extend from Factory.
@@ -60,7 +60,6 @@ class Car extends Factory {
 }
 
 
-
 // CREATE A SUB-CLASS CALLED SPORT
 // It should extend from Car.
 // The constructor should have the following properties: model, trim, transmission, top, color, seatstrim, audio, wheelstrim. The values should be specified when creating an instance of Sport.
@@ -83,7 +82,6 @@ class Sport extends Car {
     this.doors = 2
   }
 }
-
 
 
 // CREATE A SUB-CLASS CALLED TRUCK
@@ -112,7 +110,6 @@ class Truck extends Factory {
 }
 
 
-
 // LET'S BUILD SOME CARS AND TRUCKS!
 
 // MAZDA3 MASS PRODUCTION
@@ -122,15 +119,16 @@ class Truck extends Factory {
 // Write your 'mazda3' instance below:
 let mazda3 = new Car('Mazda3', 4, 'Red', 'Hybrid', 'Automatic', 'Touring', 'Base', 'Premium', 'Leather', true)
 
+
 // Print mazda3. I should have all the above properties.
 // Write your code below:
-console.log('MAZDA3: ', mazda3);
+console.log('Mazda3: ', mazda3)
 
 
 // Print calling massBuild(), building 35000 cars.
 // It should print: "Building 35000 Red Touring Mazda3's."
 // Write your code below:
-console.log(mazda3.massBuild(35000, mazda3));
+console.log(mazda3.massBuild(35000, mazda3))
 
 
 // Print, calling customerBuild(), building one yellow mazda3 with the following options, as an array: weather package, satellite radio, rear spoiler.
@@ -165,7 +163,6 @@ console.log(miataRf.massBuild(15000, miataRf))
 console.log(miataRf.customerBuild('black', miataRf, ['hid headlights', 'sports suspension', 'leather steering wheel', 'heated seats', 'adaptive cruise control']))
 
 
-
 // TRAIL BLAZER MASS PRODUCTION
 // The Trail Blazer should inherit from truck.
 // The following properties must be specified: model (Trail Blazer), color (blue), trim (Sport), enginesize (8), hitch (true), bed (standard), navigation (true), doors (2)
@@ -177,7 +174,7 @@ let trailBlazer = new Truck('Trail Blazer', 2, 'Blue', 'Sport', 8, true, 'Standa
 
 // Print trailBlazer. It should have all the above properties. Plus, the extended warranty.
 // Write your code below:
-console.log(trailBlazer)
+console.log('Trail Blazer: ', trailBlazer)
 
 
 // Print trailBlazer, calling massBuid(). It should build 35000 trucks.
