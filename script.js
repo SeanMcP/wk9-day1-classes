@@ -189,3 +189,4 @@ console.log(trailBlazer.massBuild(35000, trailBlazer))
 // Print trailBlazer, calling customerBuild(). It should build a red Trail Blazer with the following options, as an array: seat warmers, tinted windows, fog lamps.
 // It should print: "Building one red Sport Trail Blazer with the following options: seat warmers, tinted windows, fog lamps"
 // Write your code below:
+console.log(trailBlazer.customerBuild('Red', trailBlazer, ['seat warmers', 'tinted windows', 'fog lamps']))
