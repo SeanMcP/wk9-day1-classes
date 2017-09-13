@@ -16,8 +16,22 @@
 
 // Create the Factory class bellow:
 
-
-
+class Factory {
+  // constructor(make, location, airbags, abs, warranty) {
+  constructor() {
+    this.make = 'Mazda'
+    this.location = 'USA'
+    this.airbags = true
+    this.abs = true
+    this.warranty = '60,000 miles / 3 years'
+    this.massBuild = function(quantity, car) {
+      console.log(`Building ${quantity} ${car.trim} ${car.model}'s'`)
+    }
+    this.customerBuild = function(car) {
+      console.log(`Building one ${car.color} ${car.trim} ${car.model} with the following options: LIST THE OPTIONS`)
+    }
+  }
+}
 
 // CREATE A SUB-CLASS CALLED CAR
 // It should extend from Factory.
@@ -25,7 +39,25 @@
 // It should specifically inherit the warranty property from Factory so we can modify it.
 // Car should also have the following additional properties: enginesize (4), navigation (true), backupcamera (true), warranty (100,000 miles / 5 years)
 // Write your code below:
-
+class Car extends Factory {
+  constructor(model, doors, color, enginetype, transmission, trim, wheelstrim, audio, seatstrim, moonroof) {
+    super()
+    this.model = model
+    this.doors = doors
+    this.color = color
+    this.enginetype = enginetype
+    this.transmission = transmission
+    this.trim = trim
+    this.wheelstrim = wheelstrim
+    this.audio = audio
+    this.seatstrim = seatstrim
+    this.moonroof = moonroof
+    this.enginesize = 4
+    this.navigation = true
+    this.backupcamera = true
+    this.warranty = '100,000 miles / 5 years'
+  }
+}
 
 
 
@@ -35,6 +67,21 @@
 // Sports cars should also have the following additional properties: moonroof (false), enginetype (gasoline), convertible (true), doors (2)
 // Write your code below:
 
+class Sport extends Car {
+  constructor(model, trim, transmission, top, color, seatstrim, audio, wheelstrim) {
+    super(model, color, transmission, wheelstrim, audio, seatstrim)
+    // this.model = model
+    // this.color = color
+    // this.transmission = transmission
+    // this.wheelstrim = wheelstrim
+    // this.audio = audio
+    // this.seatstrim = seatstrim
+    this.moonroof = false
+    this.enginetype = 'gasoline'
+    this.convertible = true
+    this.doors = 2
+  }
+}
 
 
 
@@ -46,6 +93,20 @@
 // It should also inherit the warranty property so we can extend it to: 150,000 miles / 6 years.
 // Write your code below:
 
+class Truck extends Factory {
+  constructor(model, color, enginesize, hitch, bed, navigation) {
+    super(warranty)
+    this.model = model
+    this.color = color
+    this.enginesize = enginesize
+    this.hitch = hitch
+    this.bed = bed
+    this.navigation = navigation
+    this.backupcamera = true
+    this.audio = 'basic'
+    this.warranty = '150,000 miles / 6 years'
+  }
+}
 
 
 
@@ -56,11 +117,11 @@
 // The following properties must be specified: model (mazda3), color (red), enginetype (hybrid), transmission (automatic), trim (touring), wheels (base), audio (premium), seats (leather), and moonroof (true)
 
 // Write your 'mazda3' instance below:
-
+let mazda3 = new Car('mazda3', 4, 'red', 'hybrid', 'automatic', 'touring', 'base', 'premium', 'leather', true)
 
 // Print mazda3. I should have all the above properties.
 // Write your code below:
-
+console.log('MAZDA3: ', mazda3);
 
 
 
